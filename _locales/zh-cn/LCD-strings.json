@@ -33,5 +33,8 @@
     "LCD.drawPoint|block": "画点 | 颜色为 %colorType | x坐标 %x | y坐标 %y",
     "LCD.importImageName|block": "导入图片 | 名字为: %name 图片格式为 %format 宽度为 %width 高度为 %height",
     "LCD.touch|block": "判断 图片1%image1 与 图片2%image2 是否重叠",
-    "LCD.directDislayImage|block": "显示图片 | 名字为 %name x起始位置为 %xStart y起始位置为 %yStart 宽度为 %width 高度为 %height"
+    "LCD.directDislayImage|block": "显示图片 | 名字为 %name x起始位置为 %xStart y起始位置为 %yStart 宽度为 %width 高度为 %height",
+    "LCD.vibrationMotor|block": "振动电机 %on",
+    "OnOff.ON|block": "打开",
+    "OnOff.OFF|block": "关闭"
 }

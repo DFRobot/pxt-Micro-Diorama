@@ -14,6 +14,14 @@ enum GamerBitPin {
 }
 
 //%
+enum OnOff {
+    //% blockId="ON" block="ON"
+    ON = 1,
+    //% blockId="OFF" block="OFF"
+    OFF = 0
+}
+
+//%
 enum GamerBitEvent {
     //% block="pressed"
     Down = DAL.MICROBIT_BUTTON_EVT_DOWN,
@@ -160,14 +168,14 @@ namespace LCD {
         //% blockId="showImage" block="Show image %image at x %xEnd y%yEnd"
         //% blockGap=8
         //% weight=86
-        //% xEnd.min=0 xEnd.max=319
-        //% yEnd.min=0 yEnd.max=239
+        //% xEnd.min=0 xEnd.max=128
+        //% yEnd.min=0 yEnd.max=128
         //% parts="neopixel"
         showImage(xEnd: number, yEnd: number) {
             while (flag)
                 flag = true
             if (this.xStart + this.width > xMax || this.yStart + this.height > yMax || this.xStart < xMin || this.yStart < yMin || xEnd < xMin || yEnd < yMin || xEnd + this.width > xMax || yEnd + this.height > yMax) {
-                serial.writeLine("x from 0 to 320,y from 0 to 240")
+                serial.writeLine("x from 0 to 128,y from 0 to 128")
                 return
             }
             let overlapping = 0
@@ -630,8 +638,8 @@ namespace LCD {
     //% blockId="importImageName"
     //% blockGap=10
     //% weight=89
-    //% width.min=0 width.max=320
-    //% height.min=0 height.max=240
+    //% width.min=0 width.max=128
+    //% height.min=0 height.max=128
     //% block="Import image | name: %name format %format width %width height %height"
     //% color.fieldEditor="gridpicker" color.fieldOptions.column
     //% blockSetVariable=image
@@ -828,6 +836,17 @@ namespace LCD {
         spiEnd()
         spiWiat()
     }
+
+    //% weight=11
+    //% blockId=vibrationMotor block="Vibration Motor |%on"
+    export function vibrationMotor(on: OnOff): void {
+        if (on == 1) {
+            pins.digitalWritePin(DigitalPin.P12, 1)
+        } else {
+            pins.digitalWritePin(DigitalPin.P12, 0)
+        }
+    }
+
 
     /**
      * Registers code to run when a DFRobot gamer:bit event is detected.

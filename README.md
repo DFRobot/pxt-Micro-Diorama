@@ -1,6 +1,6 @@
-# micro:IOBOX
+# micro:Micro-Diorama
 
-micro:IOBOX drive expansion board.
+micro:Micro-Diorama.
 ---------------------------------------------------------
 
 ## Table of Contents
@@ -11,7 +11,7 @@ micro:IOBOX drive expansion board.
 * [License](#license)
 
 ## URL
-project URL:  ```https://github.com/DFRobot/pxt-micro-IOBOX```
+project URL:  ```https://github.com/DFRobot/pxt-Micro-Diorama```
 
 ## Summary
 
